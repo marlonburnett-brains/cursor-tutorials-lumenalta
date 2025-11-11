@@ -1,0 +1,73 @@
+.status-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: 0;
+}
+
+.status-tab {
+  flex: 1;
+  min-height: 44px;
+  padding: 0.75rem 1rem;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  position: relative;
+  text-align: center;
+}
+
+.status-tab:hover {
+  color: var(--color-text-primary);
+  background: var(--color-bg-hover);
+}
+
+.status-tab:focus {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: -2px;
+  border-radius: 4px 4px 0 0;
+}
+
+.status-tab.active {
+  color: var(--color-accent-primary);
+  border-bottom-color: var(--color-accent-primary);
+  font-weight: 600;
+}
+
+.status-tab.active .status-tab-label {
+  color: var(--color-accent-primary);
+}
+
+.status-tab-label {
+  transition: color 0.3s ease;
+}
+
+.status-tab-count {
+  font-size: 0.75rem;
+  opacity: 0.7;
+  font-weight: 400;
+  transition: opacity 0.3s ease;
+}
+
+.status-tab.active .status-tab-count {
+  opacity: 1;
+  font-weight: 500;
+}
+
+/* Touch-friendly sizing */
+@media (max-width: 768px) {
+  .status-tab {
+    min-height: 48px;
+    font-size: 0.9375rem;
+  }
+}
+

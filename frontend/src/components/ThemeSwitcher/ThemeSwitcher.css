@@ -1,0 +1,46 @@
+.theme-switcher-button {
+  position: fixed;
+  top: 1.5rem;
+  right: 5rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-switcher-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1) rotate(15deg);
+}
+
+.theme-switcher-button:active {
+  transform: scale(0.95) rotate(15deg);
+}
+
+.theme-switcher-button:focus {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .theme-switcher-button {
+    top: 1rem;
+    right: 4rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.25rem;
+  }
+}
+

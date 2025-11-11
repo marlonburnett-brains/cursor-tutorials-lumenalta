@@ -1,0 +1,47 @@
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  opacity: 0.7;
+  flex: 1;
+  min-height: 150px;
+  pointer-events: none;
+}
+
+.empty-state-emoji {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: floatAnimation 3s ease-in-out infinite;
+}
+
+@keyframes floatAnimation {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.empty-state-text {
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.6;
+  max-width: 250px;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect for subtle interactivity */
+.empty-state:hover {
+  opacity: 0.9;
+}
+
+.empty-state:hover .empty-state-emoji {
+  animation: floatAnimation 1.5s ease-in-out infinite;
+}
+

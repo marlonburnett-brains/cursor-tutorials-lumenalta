@@ -1,0 +1,259 @@
+/* CSS Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+}
+
+/* Base Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Remove default button styles */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Application Root */
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+/* ============================================
+   Theme System - CSS Custom Properties
+   ============================================ */
+
+/* Default Theme Variables (Tech Modern) */
+:root {
+  /* Background colors */
+  --color-bg-primary: #0f172a;
+  --color-bg-secondary: #1e293b;
+  --color-bg-card: rgba(30, 41, 59, 0.8);
+  --color-bg-hover: rgba(51, 65, 85, 0.6);
+  
+  /* Text colors */
+  --color-text-primary: #f1f5f9;
+  --color-text-secondary: #cbd5e1;
+  --color-text-muted: #94a3b8;
+  
+  /* Accent colors */
+  --color-accent-primary: #06b6d4;
+  --color-accent-secondary: #0891b2;
+  --color-accent-hover: #22d3ee;
+  
+  /* Border colors */
+  --color-border: rgba(148, 163, 184, 0.2);
+  --color-border-light: rgba(148, 163, 184, 0.1);
+  --color-border-focus: #06b6d4;
+  
+  /* Button colors */
+  --color-btn-primary: #06b6d4;
+  --color-btn-primary-hover: #0891b2;
+  --color-btn-secondary: rgba(148, 163, 184, 0.2);
+  --color-btn-secondary-hover: rgba(148, 163, 184, 0.3);
+  --color-btn-danger: #ef4444;
+  --color-btn-danger-hover: #dc2626;
+  
+  /* Status colors */
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+}
+
+/* Tech Modern Theme (Default) */
+[data-theme='tech-modern'] {
+  --color-bg-primary: #0f172a;
+  --color-bg-secondary: #1e293b;
+  --color-bg-card: rgba(30, 41, 59, 0.8);
+  --color-bg-hover: rgba(51, 65, 85, 0.6);
+  
+  --color-text-primary: #f1f5f9;
+  --color-text-secondary: #cbd5e1;
+  --color-text-muted: #94a3b8;
+  
+  --color-accent-primary: #06b6d4;
+  --color-accent-secondary: #0891b2;
+  --color-accent-hover: #22d3ee;
+  
+  --color-border: rgba(148, 163, 184, 0.2);
+  --color-border-light: rgba(148, 163, 184, 0.1);
+  --color-border-focus: #06b6d4;
+  
+  --color-btn-primary: #06b6d4;
+  --color-btn-primary-hover: #0891b2;
+  --color-btn-secondary: rgba(148, 163, 184, 0.2);
+  --color-btn-secondary-hover: rgba(148, 163, 184, 0.3);
+  --color-btn-danger: #ef4444;
+  --color-btn-danger-hover: #dc2626;
+  
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+}
+
+/* Warm Inviting Theme */
+[data-theme='warm-inviting'] {
+  --color-bg-primary: #2c1810;
+  --color-bg-secondary: #3d2415;
+  --color-bg-card: rgba(61, 36, 21, 0.8);
+  --color-bg-hover: rgba(87, 54, 33, 0.6);
+  
+  --color-text-primary: #fef3e2;
+  --color-text-secondary: #f5d7b1;
+  --color-text-muted: #d4a574;
+  
+  --color-accent-primary: #ff6b6b;
+  --color-accent-secondary: #ee5a52;
+  --color-accent-hover: #ff8787;
+  
+  --color-border: rgba(212, 165, 116, 0.25);
+  --color-border-light: rgba(212, 165, 116, 0.15);
+  --color-border-focus: #ff6b6b;
+  
+  --color-btn-primary: #ff6b6b;
+  --color-btn-primary-hover: #ee5a52;
+  --color-btn-secondary: rgba(212, 165, 116, 0.25);
+  --color-btn-secondary-hover: rgba(212, 165, 116, 0.35);
+  --color-btn-danger: #dc2626;
+  --color-btn-danger-hover: #b91c1c;
+  
+  --color-success: #34d399;
+  --color-warning: #fbbf24;
+  --color-error: #f87171;
+}
+
+/* Professional Elegant Theme */
+[data-theme='professional-elegant'] {
+  --color-bg-primary: #0a1628;
+  --color-bg-secondary: #1a2332;
+  --color-bg-card: rgba(26, 35, 50, 0.85);
+  --color-bg-hover: rgba(42, 54, 74, 0.6);
+  
+  --color-text-primary: #f8fafc;
+  --color-text-secondary: #e2e8f0;
+  --color-text-muted: #94a3b8;
+  
+  --color-accent-primary: #f59e0b;
+  --color-accent-secondary: #d97706;
+  --color-accent-hover: #fbbf24;
+  
+  --color-border: rgba(148, 163, 184, 0.25);
+  --color-border-light: rgba(148, 163, 184, 0.12);
+  --color-border-focus: #f59e0b;
+  
+  --color-btn-primary: #f59e0b;
+  --color-btn-primary-hover: #d97706;
+  --color-btn-secondary: rgba(148, 163, 184, 0.2);
+  --color-btn-secondary-hover: rgba(148, 163, 184, 0.3);
+  --color-btn-danger: #ef4444;
+  --color-btn-danger-hover: #dc2626;
+  
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+}
+
+/* Natural Calm Theme */
+[data-theme='natural-calm'] {
+  --color-bg-primary: #0f1e13;
+  --color-bg-secondary: #1a2e1f;
+  --color-bg-card: rgba(26, 46, 31, 0.8);
+  --color-bg-hover: rgba(42, 64, 48, 0.6);
+  
+  --color-text-primary: #f0f9f4;
+  --color-text-secondary: #d1e7dd;
+  --color-text-muted: #94b8a3;
+  
+  --color-accent-primary: #10b981;
+  --color-accent-secondary: #059669;
+  --color-accent-hover: #34d399;
+  
+  --color-border: rgba(148, 184, 163, 0.25);
+  --color-border-light: rgba(148, 184, 163, 0.12);
+  --color-border-focus: #10b981;
+  
+  --color-btn-primary: #10b981;
+  --color-btn-primary-hover: #059669;
+  --color-btn-secondary: rgba(148, 184, 163, 0.2);
+  --color-btn-secondary-hover: rgba(148, 184, 163, 0.3);
+  --color-btn-danger: #ef4444;
+  --color-btn-danger-hover: #dc2626;
+  
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #f87171;
+}
+
+/* Bold Energetic Theme */
+[data-theme='bold-energetic'] {
+  --color-bg-primary: #1a1a1a;
+  --color-bg-secondary: #2d2d2d;
+  --color-bg-card: rgba(45, 45, 45, 0.85);
+  --color-bg-hover: rgba(64, 64, 64, 0.6);
+  
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #e5e5e5;
+  --color-text-muted: #a3a3a3;
+  
+  --color-accent-primary: #ff5722;
+  --color-accent-secondary: #f4511e;
+  --color-accent-hover: #ff7043;
+  
+  --color-border: rgba(163, 163, 163, 0.3);
+  --color-border-light: rgba(163, 163, 163, 0.15);
+  --color-border-focus: #ff5722;
+  
+  --color-btn-primary: #ff5722;
+  --color-btn-primary-hover: #f4511e;
+  --color-btn-secondary: rgba(163, 163, 163, 0.25);
+  --color-btn-secondary-hover: rgba(163, 163, 163, 0.35);
+  --color-btn-danger: #dc2626;
+  --color-btn-danger-hover: #b91c1c;
+  
+  --color-success: #22c55e;
+  --color-warning: #fb923c;
+  --color-error: #ef4444;
+}
+

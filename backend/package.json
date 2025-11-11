@@ -1,0 +1,43 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "nodemon --watch src --ext ts --exec ts-node src/server.ts",
+    "start": "node dist/server.js",
+    "build": "tsc",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest run --coverage",
+    "test:unit": "vitest run src/",
+    "test:integration": "vitest run tests/integration/",
+    "lint": "eslint src/**/*.ts",
+    "format": "prettier --write src/**/*.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "Backend REST API for Kanban To-Do Application",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.5",
+    "@types/node": "^24.10.0",
+    "@types/supertest": "^6.0.3",
+    "@typescript-eslint/eslint-plugin": "^8.46.4",
+    "@typescript-eslint/parser": "^8.46.4",
+    "@vitest/ui": "^3.2.4",
+    "eslint": "^9.39.1",
+    "eslint-config-prettier": "^10.1.8",
+    "nodemon": "^3.1.10",
+    "prettier": "^3.6.2",
+    "supertest": "^7.1.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.4"
+  }
+}

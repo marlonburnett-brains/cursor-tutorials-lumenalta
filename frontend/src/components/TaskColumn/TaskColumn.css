@@ -1,0 +1,144 @@
+.task-column {
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+  overflow: visible;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+/* Drag Over State */
+.task-column-drag-over {
+  background: var(--color-bg-hover);
+  border: 2px dashed var(--color-border-focus);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);
+  transform: scale(1.02);
+}
+
+.task-column-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-border);
+  transition: border-color 0.3s ease;
+}
+
+.task-column-header h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.task-count-badge {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  opacity: 0.7;
+  margin-left: 0.25rem;
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+.task-column-header h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.task-column-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 0.5rem;
+  padding-top: 0.25rem;
+}
+
+/* Custom Scrollbar */
+.task-column-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.task-column-content::-webkit-scrollbar-track {
+  background: var(--color-bg-secondary);
+  border-radius: 4px;
+}
+
+.task-column-content::-webkit-scrollbar-thumb {
+  background: var(--color-accent-primary);
+  border-radius: 4px;
+}
+
+.task-column-content::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-hover);
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Adjust empty state alignment when it appears after NewTaskCard in To Do column */
+.task-column-content > .new-task-card ~ .empty-state,
+.task-column-content > .new-task-button-add ~ .empty-state {
+  margin-top: -4rem;
+}
+
+/* Temporary task placeholder (will be replaced with TaskCard) */
+.task-placeholder {
+  padding: 1rem;
+  color: var(--color-text-primary);
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.task-placeholder:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.task-placeholder p {
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.3s ease;
+}
+
+/* Load More Button */
+.load-more-button {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 1rem;
+  background: var(--color-btn-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  color: var(--color-accent-primary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.load-more-button:hover {
+  background: var(--color-btn-secondary-hover);
+  border-color: var(--color-border-focus);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px var(--color-btn-secondary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .task-column {
+    height: auto;
+    min-height: 300px;
+    max-height: 500px;
+  }
+}
+

@@ -1,0 +1,68 @@
+.status-change-buttons {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.status-change-button {
+  display: flex !important;
+  flex-direction: row !important;
+  flex: 0 0 auto !important;
+  min-width: 32px;
+  min-height: 32px;
+  padding: 0.5rem 0.75rem;
+  background: var(--color-btn-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  color: var(--color-text-primary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  white-space: nowrap;
+}
+
+.status-change-button:hover {
+  background: var(--color-btn-secondary-hover);
+  border-color: var(--color-border-focus);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.status-change-button:active {
+  transform: translateY(0);
+}
+
+.status-change-button:focus {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+.status-change-emoji {
+  font-size: 1rem;
+  line-height: 1;
+  display: inline-block;
+}
+
+.status-change-label {
+  font-size: 0.8125rem;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+/* Touch-friendly sizing for mobile */
+@media (max-width: 768px) {
+  .status-change-button {
+    min-height: 44px;
+    padding: 0.625rem 1rem;
+  }
+}

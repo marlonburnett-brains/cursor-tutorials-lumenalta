@@ -1,0 +1,140 @@
+/**
+ * Error Notification Styles
+ * 
+ * Toast-style notification with glass morphism and smooth animations
+ */
+
+.error-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  
+  min-width: 320px;
+  max-width: 500px;
+  padding: 16px 20px;
+  
+  background: rgba(220, 38, 38, 0.9);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  
+  color: white;
+  
+  animation: slideInRight 0.3s ease-out;
+}
+
+.error-notification.exiting {
+  animation: slideOutRight 0.3s ease-in;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+}
+
+.error-notification-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  flex: 1;
+}
+
+.error-icon {
+  font-size: 24px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.error-message {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.error-notification-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.error-retry-button {
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  color: white;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.error-retry-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.error-retry-button:active {
+  transform: translateY(0);
+}
+
+.error-dismiss-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.error-dismiss-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.error-dismiss-button:active {
+  transform: scale(0.95);
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+  .error-notification {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    min-width: auto;
+    max-width: none;
+  }
+}
+

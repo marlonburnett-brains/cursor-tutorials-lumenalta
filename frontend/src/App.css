@@ -1,0 +1,165 @@
+.app {
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    var(--color-bg-primary) 0%,
+    var(--color-bg-secondary) 50%,
+    var(--color-bg-hover) 100%
+  );
+  padding: 2rem;
+  position: relative;
+  overflow-x: hidden;
+  transition: background 0.3s ease;
+}
+
+/* Add subtle animated gradient background */
+.app::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    var(--color-accent-primary),
+    var(--color-accent-secondary),
+    var(--color-accent-hover)
+  );
+  opacity: 0.1;
+  animation: gradientShift 15s ease infinite;
+  pointer-events: none;
+  z-index: 0;
+  transition: background 0.3s ease, opacity 0.3s ease;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.app-header {
+  text-align: center;
+  color: var(--color-text-primary);
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+.app-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.app-header p {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  font-weight: 400;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
+}
+
+/* Header controls container */
+.app-header > div {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+/* Keyboard Shortcuts Hint Button */
+.shortcuts-hint-button {
+  background: var(--color-btn-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.shortcuts-hint-button:hover {
+  background: var(--color-btn-secondary-hover);
+  border-color: var(--color-border-focus);
+  transform: scale(1.1);
+}
+
+/* Keyboard Shortcuts Panel */
+.shortcuts-panel {
+  max-width: 400px;
+  margin: 1rem auto 0;
+  padding: 1.5rem;
+  text-align: left;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.shortcuts-panel h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--color-text-primary);
+  transition: color 0.3s ease;
+}
+
+.shortcuts-panel ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.shortcuts-panel li {
+  padding: 0.5rem 0;
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+  transition: color 0.3s ease;
+}
+
+.shortcuts-panel kbd {
+  background: var(--color-btn-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  font-family: monospace;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-right: 0.5rem;
+  color: var(--color-accent-primary);
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.app-main {
+  position: relative;
+  z-index: 1;
+}
+
+/* Glassmorphism utility classes */
+.glass {
+  background: var(--color-bg-card);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.glass-strong {
+  background: var(--color-bg-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+

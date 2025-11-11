@@ -1,0 +1,167 @@
+.task-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  transition: all 0.3s ease;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Mode-specific styles */
+.task-board--kanban {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.task-board--compact {
+  display: block;
+  grid-template-columns: none;
+  max-width: 800px;
+}
+
+/* Loading State */
+.task-board-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  color: white;
+  font-size: 1.25rem;
+}
+
+/* Error State */
+.task-board-error {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 3rem 2rem;
+  text-align: center;
+  color: white;
+}
+
+.error-icon-large {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.task-board-error h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.task-board-error p {
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.error-retry-button-large {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.75rem 2rem;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.error-retry-button-large:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Skeleton Loading States */
+.skeleton-card {
+  padding: 1rem;
+  min-height: 100px;
+  animation: skeleton-pulse 1.5s ease-in-out infinite;
+}
+
+.skeleton-line {
+  height: 14px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  animation: skeleton-shimmer 1.5s ease-in-out infinite;
+}
+
+.skeleton-line-short {
+  width: 60%;
+}
+
+.skeleton-line-medium {
+  width: 80%;
+}
+
+.skeleton-line-long {
+  width: 95%;
+}
+
+.skeleton-text {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.skeleton-badge {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.3);
+}
+
+@keyframes skeleton-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes skeleton-shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: 200px 0;
+  }
+}
+
+/* Drag Overlay */
+.task-card-drag-overlay {
+  opacity: 0.8;
+  transform: rotate(3deg);
+  cursor: grabbing;
+  transition: transform 0.2s ease;
+}
+
+.task-card-drag-overlay .task-card {
+  pointer-events: none;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .task-board {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .task-board {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+

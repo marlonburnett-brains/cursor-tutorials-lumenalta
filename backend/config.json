@@ -1,0 +1,6 @@
+{
+  "port": 3001,
+  "corsOrigin": "http://localhost:5173",
+  "dataFilePath": "./data/tasks.json"
+}
+
